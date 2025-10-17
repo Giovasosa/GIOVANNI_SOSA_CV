@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum de Giovanni Sosa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .boton-descarga {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      background: #0a9396;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .carrusel {
+      display: flex;
+      width: 200%;
+      height: calc(100vh - 120px);
+      transition: transform 0.8s ease-in-out;
+    }
+
+    section {
+      width: 50%;
+      height: 100%;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    /* === Página 1 (CV) === */
+    #cv {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+    }
+
+    .foto-certificado {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .foto {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #0a9396;
+      object-fit: cover;
+    }
+
+    .certificado {
+      width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #0a9396;
+      border-bottom: 2px solid #0a9396;
+      padding-bottom: 0.3rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    /* === Página 2 (Certificados) === */
+    #certificados {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* antes era center */
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      height: calc(100vh - 120px); /* ocupa toda la pantalla sin scroll */
+    }
+
+
+    #certificados h2 {
+      margin-bottom: 1rem;
+    }
+
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .galeria img {
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* === Flechas laterales === */
+    .flecha {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: #0a9396;
+      cursor: pointer;
+      z-index: 2000;
+      transition: transform 0.3s, color 0.3s;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      padding: 0.3rem 0.8rem;
+      user-select: none;
+    }
+
+    .flecha:hover {
+      color: #005f73;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    .flecha-izquierda {
+      left: 25px;
+    }
+
+    .flecha-derecha {
+      right: 25px;
+    }
+
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      #cv {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .flecha {
+        display: none;
+      }
+
+      section {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Giovanni Sosa</h1>
+    <p>Desarrollador Oracle | PL/SQL | Oracle APEX | Integración de Sistemas</p>
+    <a href="cv-giovanni.pdf" download class="boton-descarga">📥 Descargar CV</a>
+  </header>
+
+  <div class="carrusel" id="carrusel">
+
+    <!-- Página 1: CV -->
+    <section id="cv">
+      <div>
+        <div class="foto-certificado">
+          <img src="https://i.imgur.com/cgHswaf.jpg" alt="Foto de Giovanni" class="foto">
+          <img src="https://i.imgur.com/Q5effpi.jpg" alt="Certificación Oracle APEX" class="certificado">
+        </div>
+
+        <h2>Información Personal</h2>
+        <p><strong>Email:</strong> giovasosa05@gmail.com</p>
+        <p><strong>Teléfono:</strong> +595 991 236265</p>
+        <p><strong>Dirección:</strong> Av. Jose Amolas 828, Luque, Paraguay</p>
+        <p><strong>LinkedIn:</strong> 
+          <a href="https://www.linkedin.com/in/giovanni-sosa-415594361" target="_blank">
+            giovanni-sosa-415594361
+          </a>
+        </p>
+
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Oracle PL/SQL, Oracle APEX</li>
+          <li>RESTful Services, Web Services</li>
+          <li>OCI (Oracle Cloud Infrastructure)</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Jaspersoft Studio, iReport</li>
+          <li>COBOL</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Objetivo Profesional</h2>
+        <p>Desarrollar soluciones tecnológicas robustas y escalables aprovechando mi experiencia como Desarrollador Oracle. Me especializo en la optimización de procesos empresariales mediante PL/SQL, Oracle APEX y servicios REST.</p>
+
+        <h2>Experiencia Profesional</h2>
+        <p><strong>Desarrollador Oracle - ONNIX S.A.</strong> (Septiembre 2025 - Actualidad)</p>
+        <p>Desarrollo y mantenimiento de soluciones Oracle APEX y PL/SQL. Implementación de servicios RESTful e integración de sistemas empresariales.</p>
+
+        <p><strong>Desarrollador Oracle - KOVE S.A.</strong> (Enero 2024 - Septiembre 2025)</p>
+        <p>Migración de sistemas legados desde Ingres, COBOL y Oracle Forms hacia Oracle APEX. Desarrollo de servicios REST y Web Services.</p>
+
+        <h2>Educación</h2>
+        <p><strong>Ingeniería en Informática</strong> - Universidad del Norte</p>
+        <p><strong>Bachiller Técnico en Electrónica</strong> - C.C.T.L. Luque</p>
+      </div>
+    </section>
+
+    <!-- Página 2: Certificados -->
+        <section id="certificados">
+          <h2 style="margin-top: 0;">Mis Certificados</h2>
+        
+          <div class="galeria" style="margin-top: 1rem;">
+            <img src="https://i.imgur.com/Q5effpi.jpg" alt="Certificación Oracle APEX">
+            <img src="https://imgur.com/a/I1Qmx8x.jpg" alt="Certificación PL/SQL Avanzado">
+            <img src="https://imgur.com/6ZcqJdT.jpg" alt="Certificación RESTful Services">
+          </div>
+        </section>
+  </div>
+
+  <div class="flecha flecha-izquierda" id="izquierda" style="display:none;">&#10094;</div>
+  <div class="flecha flecha-derecha" id="derecha">&#10095;</div>
+
+  <footer>
+    &copy; 2025 Giovanni Sosa - Todos los derechos reservados
+  </footer>
+
+  <script>
+    const carrusel = document.getElementById('carrusel');
+    const izq = document.getElementById('izquierda');
+    const der = document.getElementById('derecha');
+    let pagina = 1;
+
+    der.addEventListener('click', () => {
+      carrusel.style.transform = 'translateX(-50%)';
+      der.style.display = 'none';
+      izq.style.display = 'block';
+    });
+
+    izq.addEventListener('click', () => {
+      carrusel.style.transform = 'translateX(0)';
+      der.style.display = 'block';
+      izq.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
